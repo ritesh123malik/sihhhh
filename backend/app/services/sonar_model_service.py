@@ -16,15 +16,15 @@ _DEFAULT_NAMES = {
 }
 
 _BACKEND_DIR = Path(__file__).resolve().parents[2]
-_PROJECT_DIR = Path(__file__).resolve().parents[3]
-_REPO_ROOT = Path(__file__).resolve().parents[6]
+_PROJECT_DIR = _BACKEND_DIR
+_REPO_ROOT = _BACKEND_DIR
 
 _CANDIDATE_WEIGHTS = [
     _BACKEND_DIR / "best.pt",
     _BACKEND_DIR / "model" / "best.pt",
     _PROJECT_DIR / "model" / "best.pt",
     _BACKEND_DIR / "yolov8s.pt",
-    _REPO_ROOT / "backend" / "yolov8s.pt",
+    _REPO_ROOT / "yolov8s.pt",
 ]
 
 _INFER_SIZES = (640, 960)
