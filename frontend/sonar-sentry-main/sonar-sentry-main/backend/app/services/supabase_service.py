@@ -8,12 +8,15 @@ try:
 except ImportError:
     HAS_SUPABASE_SDK = False
 
+from app.config import get_settings
+
 class SupabaseService:
     """Service wrapper for Supabase database and storage integration."""
 
     def __init__(self) -> None:
-        self.url: Optional[str] = os.getenv("SUPABASE_URL")
-        self.key: Optional[str] = os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv("SUPABASE_ANON_KEY")
+        settings = get_settings()
+        self.url: Optional[str] = settings.supabase_url or os.getenv("SUPABASE_URL")
+        self.key: Optional[str] = settings.supabase_service_role_key or settings.supabase_anon_key or os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv("SUPABASE_ANON_KEY")
         self.client: Optional[Any] = None
 
         if HAS_SUPABASE_SDK and self.url and self.key:

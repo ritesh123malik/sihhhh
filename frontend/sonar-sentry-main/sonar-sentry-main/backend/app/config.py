@@ -23,6 +23,10 @@ class Settings(BaseSettings):
     upload_dir: str = str(Path(__file__).resolve().parent.parent / "data" / "uploads")
     output_dir: str = str(Path(__file__).resolve().parent.parent / "data" / "outputs")
 
+    supabase_url: str = ""
+    supabase_service_role_key: str = ""
+    supabase_anon_key: str = ""
+
     allowed_image_mimes: list[str] = ["image/jpeg", "image/png", "image/tiff"]
     allowed_sonar_types: list[str] = [
         "Side-Scan",
