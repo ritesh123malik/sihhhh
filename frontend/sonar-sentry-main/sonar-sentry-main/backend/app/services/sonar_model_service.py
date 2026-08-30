@@ -20,10 +20,11 @@ _PROJECT_DIR = Path(__file__).resolve().parents[3]
 _REPO_ROOT = Path(__file__).resolve().parents[6]
 
 _CANDIDATE_WEIGHTS = [
+    _BACKEND_DIR / "best.pt",
+    _BACKEND_DIR / "model" / "best.pt",
     _PROJECT_DIR / "model" / "best.pt",
     _BACKEND_DIR / "yolov8s.pt",
     _REPO_ROOT / "backend" / "yolov8s.pt",
-    Path(r"C:\sih_code_only_backup\runs\sonar_debris\sih2026_yolov8s_marine_debris\weights\best.pt"),
 ]
 
 _INFER_SIZES = (640, 960)
