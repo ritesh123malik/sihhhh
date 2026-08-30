@@ -12,14 +12,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /app
 
-# Copy requirements and install
-COPY frontend/sonar-sentry-main/sonar-sentry-main/backend/requirements.txt ./requirements.txt
+# Copy requirements and install dependencies
+COPY backend/requirements.txt ./requirements.txt
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
-# Copy source code and model weights
-COPY frontend/sonar-sentry-main/sonar-sentry-main/backend /app
-COPY frontend/sonar-sentry-main/sonar-sentry-main/model /app/model
+# Copy backend source code and model weights
+COPY backend /app
+COPY model /app/model
 
 EXPOSE 8000
 
