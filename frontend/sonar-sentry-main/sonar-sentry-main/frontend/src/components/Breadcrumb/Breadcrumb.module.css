@@ -1,0 +1,49 @@
+.crumbRow {
+  padding: 20px clamp(20px, 5vw, 64px) 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btnBack {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gesso-fg-muted);
+  padding: 8px 14px;
+  border-radius: var(--gesso-radius-md);
+  border: 1px solid var(--gesso-divider);
+  background: transparent;
+  transition: background var(--gesso-duration-fast) var(--gesso-easing-default),
+    color var(--gesso-duration-fast) var(--gesso-easing-default);
+}
+
+.btnBack:hover {
+  background: var(--gesso-surface);
+  color: var(--gesso-fg);
+}
+
+.btnBack:focus-visible {
+  outline: 2px solid var(--gesso-fg);
+  outline-offset: 2px;
+}
+
+.btnBack svg {
+  width: 16px;
+  height: 16px;
+}
+
+.crumbSep {
+  font-size: 12px;
+  color: var(--gesso-fg-muted);
+}
+
+.crumbFile {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gesso-fg);
+  font-family: var(--gesso-font-display);
+}

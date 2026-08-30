@@ -1,0 +1,17 @@
+node_modules/
+dist/
+coverage/
+
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.pytest_cache/
+
+.DS_Store
+Thumbs.db
+create-a-webpage-for-each-and-every-upload-to-ch-design.md
+signal-station-design.md
+create-a-in-depth-setting-page-for-changing-all-design.md
+mission-ledger-design.md

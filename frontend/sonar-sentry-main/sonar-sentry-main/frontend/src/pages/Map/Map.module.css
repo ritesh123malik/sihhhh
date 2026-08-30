@@ -1,0 +1,199 @@
+/* ── Page layout ─────────────────────────────────────────────────────────── */
+.page {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  height: calc(100vh - 72px);
+  overflow: hidden;
+}
+
+/* ── Sidebar ──────────────────────────────────────────────────────────────── */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px 18px 24px;
+  border-right: 1px solid var(--gesso-divider);
+  background: var(--gesso-canvas);
+  overflow-y: auto;
+  height: 100%;
+}
+
+.sidebarHeader { display: flex; flex-direction: column; gap: 4px; }
+.sidebarTitle { font-size: 20px; font-weight: 700; margin: 0; line-height: 1.2; }
+.sidebarSub { font-size: 12px; color: var(--gesso-fg-muted); margin: 0; }
+
+/* ── Basemap toggle ───────────────────────────────────────────────────────── */
+.basemap { display: flex; gap: 6px; }
+
+.layer,
+.layerOn {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 10px;
+  border-radius: var(--gesso-radius-md);
+  border: 1px solid var(--gesso-divider);
+  cursor: pointer;
+  text-align: center;
+  background: transparent;
+  color: var(--gesso-fg-muted);
+  transition: all 0.15s;
+}
+.layer:hover { background: var(--gesso-surface); color: var(--gesso-fg); }
+.layerOn { background: var(--gesso-fg); color: var(--gesso-canvas); border-color: var(--gesso-fg); }
+
+/* ── Error / Empty ────────────────────────────────────────────────────────── */
+.error {
+  padding: 10px 12px;
+  border-radius: var(--gesso-radius-md);
+  border: 1px solid #c45c26;
+  background: color-mix(in srgb, #c45c26 12%, var(--gesso-surface));
+  font-size: 13px;
+}
+.empty { font-size: 13px; color: var(--gesso-fg-muted); }
+
+/* ── Section labels ───────────────────────────────────────────────────────── */
+.listLabel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--gesso-fg-muted);
+}
+.listCount { color: var(--gesso-fg-muted); font-weight: 500; }
+
+/* ── Report list ──────────────────────────────────────────────────────────── */
+.reportListWrap { display: flex; flex-direction: column; gap: 8px; }
+.reportList { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+
+.reportCard {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: var(--gesso-radius-md);
+  background: var(--gesso-surface);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.reportCard:hover { border-color: var(--gesso-divider); background: color-mix(in srgb, var(--gesso-fg) 5%, var(--gesso-surface)); }
+.reportCardActive { background: var(--gesso-fg); color: var(--gesso-canvas); border-color: var(--gesso-fg); }
+
+/* Serial number badge */
+.serial {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--gesso-divider);
+  color: var(--gesso-fg-muted);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+.serialActive { background: rgba(255, 255, 255, 0.25); color: var(--gesso-canvas); }
+
+.reportCardBody { flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.reportCardTop { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+.reportName { font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.detectionBadge {
+  flex-shrink: 0;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+.reportCardActive .detectionBadge { background: rgba(255,255,255,0.2); color: var(--gesso-canvas); border-color: rgba(255,255,255,0.35); }
+
+.reportMeta { font-size: 11px; color: var(--gesso-fg-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.reportCardActive .reportMeta { color: color-mix(in srgb, var(--gesso-canvas) 80%, transparent); }
+
+.reportCoords { font-size: 10px; font-family: var(--gesso-font-mono, monospace); color: var(--gesso-fg-muted); letter-spacing: 0.02em; }
+.reportCardActive .reportCoords { color: color-mix(in srgb, var(--gesso-canvas) 65%, transparent); }
+
+/* ── Instance panel ───────────────────────────────────────────────────────── */
+.instancePanel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 6px;
+  border-top: 1px solid var(--gesso-divider);
+}
+.instancePanelHeader { display: flex; align-items: center; justify-content: space-between; }
+
+.viewResultsBtn {
+  font-size: 11px;
+  font-weight: 700;
+  color: #3b82f6;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.viewResultsBtn:hover { color: #1d4ed8; }
+
+.instanceList { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px; }
+
+.instanceItem {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: var(--gesso-radius-md);
+  background: var(--gesso-surface);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.instanceItem:hover { border-color: var(--gesso-divider); }
+.instanceItemActive { background: color-mix(in srgb, #3b82f6 10%, var(--gesso-surface)); border-color: #3b82f6; }
+
+.instanceSerial {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--gesso-divider);
+  color: var(--gesso-fg-muted);
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.instanceItemActive .instanceSerial { background: #3b82f6; color: #fff; }
+
+.instanceBody { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.instanceTop { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+.instanceName { font-size: 12px; font-weight: 600; color: var(--gesso-fg); }
+.instanceCoords { font-size: 10px; font-family: var(--gesso-font-mono, monospace); color: var(--gesso-fg-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ── Risk pills ───────────────────────────────────────────────────────────── */
+.riskPill { flex-shrink: 0; font-size: 9px; font-weight: 700; text-transform: uppercase; padding: 1px 6px; border-radius: 3px; letter-spacing: 0.04em; }
+.riskHigh  { background: #ef4444; color: #fff; }
+.riskMedium { background: #f59e0b; color: #fff; }
+.riskLow   { background: #10b981; color: #fff; }
+
+/* ── Map column ───────────────────────────────────────────────────────────── */
+.mapCol { height: 100%; display: flex; }
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .page { grid-template-columns: 1fr; grid-template-rows: auto 1fr; height: auto; overflow: auto; }
+  .sidebar { height: auto; max-height: 55vh; border-right: none; border-bottom: 1px solid var(--gesso-divider); }
+  .mapCol { height: 60vh; }
+}

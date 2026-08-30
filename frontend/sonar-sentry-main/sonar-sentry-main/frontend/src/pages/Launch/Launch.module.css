@@ -1,0 +1,16 @@
+.workSurface {
+  padding: 24px clamp(20px, 5vw, 64px) 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.errorBanner {
+  padding: 12px 16px;
+  border-radius: var(--gesso-radius-md);
+  border: 1px solid #c45c26;
+  background: color-mix(in srgb, #c45c26 12%, var(--gesso-surface));
+  color: var(--gesso-fg);
+  font-size: 14px;
+}
+

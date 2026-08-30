@@ -1,0 +1,145 @@
+.panel {
+  background: var(--gesso-surface);
+  border: 1px solid var(--gesso-divider);
+  border-radius: var(--gesso-radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.panelTitle {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.panelSub {
+  font-size: 12px;
+  color: var(--gesso-fg-muted);
+  margin-top: 4px;
+}
+
+.dropzone {
+  border-radius: var(--gesso-radius-lg);
+  background: var(--gesso-surface-recessed);
+  padding: clamp(32px, 5vw, 56px) 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: background var(--gesso-duration-fast) var(--gesso-easing-default),
+    border-color var(--gesso-duration-fast) var(--gesso-easing-default);
+  border: 2px dashed transparent;
+}
+
+.dropzone:hover {
+  background: var(--gesso-surface-elevated);
+  border-color: var(--gesso-divider);
+}
+
+.dropzone:focus-visible {
+  outline: 2px solid var(--gesso-fg);
+  outline-offset: 4px;
+}
+
+.thumbWrap {
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--gesso-radius-md);
+  overflow: hidden;
+  background: var(--gesso-surface-elevated);
+}
+
+.thumbWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--gesso-radius-full);
+  background: var(--gesso-surface-elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gesso-fg-muted);
+}
+
+.headline {
+  font-family: var(--gesso-font-display);
+  font-weight: 700;
+  font-size: clamp(20px, 2.2vw, 26px);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.meta {
+  font-size: 12px;
+  color: var(--gesso-fg-muted);
+}
+
+.formats {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.chip {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 4px 12px;
+  border-radius: var(--gesso-radius-full);
+  background: var(--gesso-surface-elevated);
+  color: var(--gesso-fg-muted);
+}
+
+.fileActions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btnBrowse {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: var(--gesso-radius-md);
+  border: 1px solid var(--gesso-divider);
+  background: transparent;
+  color: var(--gesso-fg);
+  cursor: pointer;
+  transition: background var(--gesso-duration-fast) var(--gesso-easing-default);
+}
+
+.btnBrowse:hover {
+  background: var(--gesso-surface-elevated);
+}
+
+.btnBrowse:focus-visible {
+  outline: 2px solid var(--gesso-fg);
+  outline-offset: 2px;
+}
+
+.btnRemove {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: var(--gesso-radius-md);
+  border: 1px solid var(--gesso-divider);
+  background: transparent;
+  color: var(--gesso-fg-muted);
+  cursor: pointer;
+}
+
+.btnRemove:hover {
+  background: var(--gesso-surface-elevated);
+  color: var(--gesso-fg);
+}

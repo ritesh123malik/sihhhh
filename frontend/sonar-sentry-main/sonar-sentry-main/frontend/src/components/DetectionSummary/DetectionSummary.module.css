@@ -1,0 +1,82 @@
+.heroPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.heroStatRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.heroStat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.heroStat__label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--gesso-fg-muted);
+  text-transform: uppercase;
+}
+
+.heroStat__value {
+  font-family: var(--gesso-font-display);
+  font-weight: 700;
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 0.95;
+}
+
+.heroStat__qualifier {
+  font-size: 13px;
+  color: var(--gesso-fg-muted);
+}
+
+.delta {
+  color: var(--gesso-warning);
+  font-weight: 600;
+}
+
+.previewWrap {
+  width: 100%;
+  border-radius: var(--gesso-radius-md);
+  overflow: hidden;
+  background: var(--gesso-surface-elevated);
+  position: relative;
+  aspect-ratio: 16/8;
+  max-width: 360px;
+  flex: 1;
+  min-width: 220px;
+}
+
+.previewWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.previewOverlayTag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: var(--gesso-radius-full);
+  background: var(--gesso-canvas);
+  color: var(--gesso-fg);
+}
+
+@media (max-width: 1024px) {
+  .heroStatRow {
+    align-items: flex-start;
+  }
+}

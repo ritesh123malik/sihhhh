@@ -1,0 +1,16 @@
+.workSurface {
+  padding: 0 clamp(20px, 5vw, 64px) 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.panel {
+  background: var(--gesso-surface);
+  border: 1px solid var(--gesso-divider);
+  border-radius: var(--gesso-radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

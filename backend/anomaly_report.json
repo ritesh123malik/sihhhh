@@ -1,0 +1,12 @@
+[
+    {
+        "Anomaly_ID": "HAZ-0001",
+        "Class_Label": "ghost_net",
+        "Confidence_Score": 0.88,
+        "Latitude": 13.0712,
+        "Longitude": 80.372,
+        "Estimated_Length_m": 4.5,
+        "Estimated_Height_m": 1.2,
+        "Timestamp": "2026-08-30T14:10:00Z"
+    }
+]

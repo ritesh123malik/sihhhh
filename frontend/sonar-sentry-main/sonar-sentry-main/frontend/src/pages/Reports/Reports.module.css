@@ -1,0 +1,582 @@
+/* Reports page — matches mission-ledger-design.md reference */
+
+.wrap {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 5vw, 64px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 24px;
+  font-family: var(--gesso-font-body);
+}
+
+/* Header band */
+.headerBand {
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.headerTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.pageTitle {
+  font-family: var(--gesso-font-display);
+  font-weight: 700;
+  font-size: clamp(22px, 2.4vw, 28px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--gesso-fg);
+}
+
+.pageSub {
+  font-size: 13px;
+  color: var(--gesso-fg-muted);
+  margin-top: 4px;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--gesso-font-body);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: var(--gesso-radius-md);
+  border: none;
+  cursor: pointer;
+  background: var(--gesso-fg);
+  color: var(--gesso-canvas);
+  transition: background var(--gesso-duration-fast) var(--gesso-easing-default),
+    transform 80ms var(--gesso-easing-default);
+}
+
+.btnPrimary:hover {
+  opacity: 0.88;
+}
+
+.btnPrimary:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.btnPrimary:focus-visible {
+  outline: 2px solid var(--gesso-fg);
+  outline-offset: 2px;
+}
+
+/* Status row */
+.statusRow {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 3vw, 48px);
+  flex-wrap: wrap;
+  max-height: 96px;
+}
+
+.statusItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.statusVal {
+  font-family: var(--gesso-font-display);
+  font-weight: 700;
+  font-size: 22px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+  color: var(--gesso-fg);
+}
+
+.statusLbl {
+  font-size: 11px;
+  color: var(--gesso-fg-muted);
+  letter-spacing: 0.03em;
+}
+
+/* Filter toolbar */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  background: var(--gesso-surface);
+  border-radius: var(--gesso-radius-md);
+}
+
+.searchField {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gesso-surface-recessed);
+  border-radius: var(--gesso-radius-sm);
+  padding: 8px 12px;
+  flex: 1 1 220px;
+  min-width: 180px;
+  max-width: 320px;
+  color: var(--gesso-fg-muted);
+}
+
+.searchField input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 13px;
+  color: var(--gesso-fg);
+  width: 100%;
+  font-family: var(--gesso-font-body);
+}
+
+.searchField input::placeholder {
+  color: var(--gesso-fg-muted);
+}
+
+.seg {
+  display: flex;
+  align-items: center;
+  background: var(--gesso-surface-recessed);
+  border-radius: var(--gesso-radius-sm);
+  padding: 3px;
+  gap: 2px;
+}
+
+.segBtn {
+  border: none;
+  background: transparent;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--gesso-fg-muted);
+  padding: 8px 12px;
+  border-radius: calc(var(--gesso-radius-sm) - 2px);
+  cursor: pointer;
+  transition: background var(--gesso-duration-fast) var(--gesso-easing-default),
+    color var(--gesso-duration-fast) var(--gesso-easing-default);
+}
+
+.segBtn:hover {
+  color: var(--gesso-fg);
+}
+
+.segBtn:focus-visible {
+  outline: 2px solid var(--gesso-fg);
+  outline-offset: 1px;
+}
+
+.segBtn[aria-selected="true"] {
+  background: var(--gesso-surface-elevated);
+  color: var(--gesso-fg);
+  font-weight: 600;
+}
+
+.selectChip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gesso-surface-recessed);
+  border-radius: var(--gesso-radius-sm);
+  padding: 8px 12px;
+  font-size: 12.5px;
+  color: var(--gesso-fg);
+  cursor: pointer;
+  transition: background var(--gesso-duration-fast) var(--gesso-easing-default);
+  white-space: nowrap;
+}
+
+.selectChip:hover {
+  background: var(--gesso-surface-elevated);
+}
+
+.selectChip:focus-visible {
+  outline: 2px solid var(--gesso-fg);
+  outline-offset: 2px;
+}
+
+.selectChip svg {
+  color: var(--gesso-fg-muted);
+  flex-shrink: 0;
+}
+
+.toolbarSpacer {
+  flex: 1;
+}
+
+.resultCount {
+  font-size: 12px;
+  color: var(--gesso-fg-muted);
+  white-space: nowrap;
+}
+
+/* Table */
+.tableWrap {
+  overflow-x: auto;
+  border-radius: var(--gesso-radius-lg);
+  border: 1px solid var(--gesso-divider);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 920px;
+}
+
+thead th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gesso-fg-muted);
+  padding: 12px 16px;
+  background: var(--gesso-surface);
+  border-bottom: 1px solid var(--gesso-divider);
+  white-space: nowrap;
+}
+
+.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.thInner {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sortable:hover {
+  color: var(--gesso-fg);
+}
+
+.sortable svg {
+  width: 12px;
+  height: 12px;
+  opacity: 0.5;
+}
+
+tbody tr {
+  background: var(--gesso-canvas);
+  transition: background var(--gesso-duration-fast) var(--gesso-easing-default);
+}
+
+tbody tr:not(:last-child) td {
+  border-bottom: 1px solid var(--gesso-divider);
+}
+
+tbody tr:hover {
+  background: rgba(0, 0, 0, 0.025);
+}
+
+tbody td {
+  padding: 16px 16px;
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+thead th:last-child,
+tbody td:last-child {
+  position: sticky;
+  right: 0;
+  background: var(--gesso-canvas);
+  box-shadow: -8px 0 8px -8px rgba(0, 0, 0, 0.12);
+}
+
+thead th:last-child {
+  background: var(--gesso-surface);
+}
+
+/* Mission cell */
+.missionCell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.missionIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--gesso-radius-sm);
+  background: var(--gesso-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--gesso-fg-muted);
+}
+
+.missionTxt {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.missionName {
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--gesso-fg);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
+}
+
+.missionCode {
+  font-size: 11px;
+  color: var(--gesso-fg-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Date cell */
+.cellDate {
+  font-variant-numeric: tabular-nums;
+  color: var(--gesso-fg);
+  white-space: nowrap;
+}
+
+/* Anomaly cell */
+.anomalyCell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.anomalyCount {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: 14px;
+  width: 22px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.capsuleBars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Status badges */
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--gesso-radius-full);
+  white-space: nowrap;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.statusReviewed {
+  background: rgba(19, 139, 63, 0.10);
+  color: var(--gesso-success);
+}
+
+.statusReviewed .dot {
+  background: var(--gesso-success);
+}
+
+.statusPending {
+  background: rgba(184, 101, 5, 0.10);
+  color: var(--gesso-warning);
+}
+
+.statusPending .dot {
+  background: var(--gesso-warning);
+}
+
+.statusFlagged {
+  background: rgba(220, 38, 38, 0.10);
+  color: var(--gesso-error);
+}
+
+.statusFlagged .dot {
+  background: var(--gesso-error);
+}
+
+.statusProcessing {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--gesso-fg-muted);
+}
+
+.statusProcessing .dot {
+  background: var(--gesso-fg-muted);
+}
+
+/* Confidence cell */
+.confidenceCell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.confidenceTrack {
+  width: 56px;
+  height: 5px;
+  border-radius: var(--gesso-radius-full);
+  background: var(--gesso-surface-recessed);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.confidenceFill {
+  height: 100%;
+  border-radius: var(--gesso-radius-full);
+  background: #3b5bdb;
+}
+
+.confidenceVal {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--gesso-fg-muted);
+  width: 32px;
+}
+
+/* Row actions */
+.rowActions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+.actionBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--gesso-radius-sm);
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gesso-fg-muted);
+  cursor: pointer;
+  transition: background var(--gesso-duration-fast) var(--gesso-easing-default),
+    color var(--gesso-duration-fast) var(--gesso-easing-default);
+}
+
+.actionBtn:hover {
+  background: var(--gesso-surface-elevated);
+  color: var(--gesso-fg);
+}
+
+.actionBtn:active {
+  transform: translateY(1px) scale(0.95);
+}
+
+.actionBtn:focus-visible {
+  outline: 2px solid var(--gesso-fg);
+  outline-offset: 2px;
+}
+
+.actionBtn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.actionBtnExport {
+  background: var(--gesso-fg);
+  color: var(--gesso-canvas);
+}
+
+.actionBtnExport:hover {
+  opacity: 0.88;
+  background: var(--gesso-fg);
+  color: var(--gesso-canvas);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 4px 48px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.paginationCount {
+  font-size: 12px;
+  color: var(--gesso-fg-muted);
+}
+
+.pagerControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagerBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--gesso-radius-sm);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gesso-fg-muted);
+  cursor: pointer;
+  transition: background var(--gesso-duration-fast) var(--gesso-easing-default),
+    color var(--gesso-duration-fast) var(--gesso-easing-default);
+}
+
+.pagerBtn:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--gesso-fg);
+}
+
+.pagerBtn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.pagerBtn:focus-visible {
+  outline: 2px solid var(--gesso-fg);
+  outline-offset: 2px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .statusRow {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .headerTop {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .searchField {
+    max-width: none;
+  }
+
+  .statusRow {
+    gap: 16px;
+  }
+}

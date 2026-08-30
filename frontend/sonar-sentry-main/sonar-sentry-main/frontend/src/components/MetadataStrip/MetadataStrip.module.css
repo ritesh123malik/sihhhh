@@ -1,0 +1,27 @@
+.metaStrip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px 32px;
+}
+
+.metaCell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metaCell__label {
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--gesso-fg-muted);
+  text-transform: uppercase;
+}
+
+.metaCell__value {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--gesso-font-display);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

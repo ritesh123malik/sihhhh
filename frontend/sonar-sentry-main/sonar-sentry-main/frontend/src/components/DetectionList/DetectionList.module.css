@@ -1,0 +1,207 @@
+.panel {
+  background: var(--gesso-surface);
+  border: 1px solid var(--gesso-divider);
+  border-radius: var(--gesso-radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.listHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.listHeader__label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--gesso-fg-muted);
+  text-transform: uppercase;
+}
+
+.listHeader__count {
+  font-size: 12px;
+  color: var(--gesso-fg-muted);
+  font-family: var(--gesso-font-display);
+  font-weight: 700;
+}
+
+.thresholdBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 8px;
+}
+
+.thresholdTop {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--gesso-fg-muted);
+  font-weight: 600;
+}
+
+.thresholdTop strong {
+  color: var(--gesso-fg);
+  font-size: 16px;
+}
+
+.thresholdTrack {
+  position: relative;
+  height: 8px;
+  border-radius: var(--gesso-radius-full);
+  background: var(--gesso-surface-recessed);
+}
+
+.thresholdTrack input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  margin: 0;
+  z-index: 2;
+}
+
+.thresholdFill {
+  height: 100%;
+  border-radius: var(--gesso-radius-full);
+  background: var(--gesso-fg);
+}
+
+.instanceNote {
+  font-size: 12px;
+  color: var(--gesso-fg-muted);
+  margin: 0;
+}
+
+.detectList {
+  display: flex;
+  flex-direction: column;
+}
+
+.detectRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  text-align: left;
+  padding: 20px 8px;
+  margin: 0 -8px;
+  border: none;
+  border-top: 1px solid var(--gesso-divider);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  border-radius: var(--gesso-radius-sm);
+}
+
+.detectRow:first-child {
+  border-top: none;
+}
+
+.detectRowSelected {
+  background: var(--gesso-surface-recessed);
+}
+
+.detectRow__left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  flex: 1;
+}
+
+.detectRow__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--gesso-radius-md);
+  background: var(--gesso-surface-recessed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gesso-fg-muted);
+  flex-shrink: 0;
+}
+
+.detectRow__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.detectRow__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.detectRow__title {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: var(--gesso-font-display);
+}
+
+.detectRow__meta {
+  font-size: 12px;
+  color: var(--gesso-fg-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.detectRow__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.riskPill {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: var(--gesso-radius-full);
+}
+
+.riskPillCritical {
+  background: var(--gesso-error);
+  color: var(--gesso-on-accent);
+}
+
+.riskPillHigh {
+  background: var(--gesso-error);
+  color: var(--gesso-on-accent);
+}
+
+.riskPillMedium {
+  background: var(--gesso-warning);
+  color: var(--gesso-on-accent);
+}
+
+.riskPillLow {
+  background: var(--gesso-surface-recessed);
+  color: var(--gesso-fg-muted);
+}
+
+.detectRow__conf {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--gesso-font-display);
+  width: 44px;
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .detectRow {
+    flex-wrap: wrap;
+  }
+}

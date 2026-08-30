@@ -1,0 +1,17 @@
+@import './tokens.css';
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; min-width: 0 }
+html, body { width: 100%; min-height: 100vh; overflow-x: hidden }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale }
+body {
+  background: var(--gesso-canvas);
+  color: var(--gesso-fg);
+  font-family: var(--gesso-font-body);
+  line-height: 1.4;
+}
+img, svg { max-width: 100%; display: block }
+button { font: inherit; color: inherit; background: none; border: none; cursor: pointer }
+a { color: inherit; text-decoration: none }
+h1, h2, h3 { font-family: var(--gesso-font-display); text-wrap: balance }
+p, li, figcaption { text-wrap: pretty }
+.tabular { font-variant-numeric: tabular-nums }

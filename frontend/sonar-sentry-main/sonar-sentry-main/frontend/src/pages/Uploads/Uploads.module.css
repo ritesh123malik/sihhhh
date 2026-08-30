@@ -1,0 +1,73 @@
+.wrap {
+  padding: 0 clamp(20px, 5vw, 64px) 64px;
+}
+
+.empty {
+  color: var(--gesso-fg-muted);
+  font-size: 14px;
+}
+
+.tableWrap {
+  background: var(--gesso-surface);
+  border: 1px solid var(--gesso-divider);
+  border-radius: var(--gesso-radius-lg);
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+th, td {
+  text-align: left;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--gesso-divider);
+}
+
+th {
+  color: var(--gesso-fg-muted);
+  font-weight: 600;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr {
+  cursor: pointer;
+}
+
+tbody tr:hover {
+  background: var(--gesso-surface-elevated);
+}
+
+th:last-child,
+td:last-child {
+  position: sticky;
+  right: 0;
+  background: var(--gesso-surface);
+  box-shadow: -8px 0 8px -8px rgba(0, 0, 0, 0.12);
+}
+
+tbody tr:hover td:last-child {
+  background: var(--gesso-surface-elevated);
+}
+
+.mission {
+  font-weight: 700;
+}
+
+.status {
+  text-transform: capitalize;
+}
+
+.deleteBtn {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: var(--gesso-radius-sm);
+  border: 1px solid var(--gesso-divider);
+  color: var(--gesso-error);
+}

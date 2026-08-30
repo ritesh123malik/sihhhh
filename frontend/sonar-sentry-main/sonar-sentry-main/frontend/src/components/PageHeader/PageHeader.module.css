@@ -1,0 +1,20 @@
+.headerBand {
+  padding: 16px clamp(20px, 5vw, 64px) 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.headerBand h1 {
+  font-size: clamp(22px, 2.4vw, 26px);
+  line-height: 1.15;
+  font-weight: 700;
+  margin: 0;
+}
+
+.headerBand p {
+  font-size: 14px;
+  color: var(--gesso-fg-muted);
+  margin: 0;
+  max-width: 70ch;
+}

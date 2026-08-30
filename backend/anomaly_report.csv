@@ -1,0 +1,2 @@
+Anomaly_ID,Class_Label,Confidence_Score,Latitude,Longitude,Estimated_Length_m,Estimated_Height_m,Timestamp
+HAZ-0001,ghost_net,0.88,13.0712000,80.3720000,4.5,1.2,2026-08-30T14:10:00Z

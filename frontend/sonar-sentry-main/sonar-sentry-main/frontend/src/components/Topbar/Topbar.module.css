@@ -1,0 +1,107 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px clamp(20px, 5vw, 64px);
+  border-bottom: 1px solid var(--gesso-divider);
+  background: var(--gesso-canvas);
+}
+
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topbar__mark {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--gesso-radius-sm);
+  background: var(--gesso-fg);
+  color: var(--gesso-canvas);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--gesso-font-display);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+.topbar__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.topbar__label {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--gesso-fg-muted);
+}
+
+.topbar__name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.topbar__nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.topbar__navitem {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gesso-fg-muted);
+  padding: 8px 16px;
+  border-radius: var(--gesso-radius-md);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background var(--gesso-duration-fast) var(--gesso-easing-default),
+    color var(--gesso-duration-fast) var(--gesso-easing-default);
+}
+
+.topbar__navitem:hover {
+  background: var(--gesso-surface);
+  color: var(--gesso-fg);
+}
+
+.topbar__navitem[aria-current="page"] {
+  color: var(--gesso-fg);
+  background: var(--gesso-surface);
+}
+
+.topbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--gesso-radius-full);
+  background: var(--gesso-surface);
+  color: var(--gesso-fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .topbar__nav {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

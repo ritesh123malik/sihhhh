@@ -1,0 +1,79 @@
+:root {
+  /* Colors — Signal Station (pale indigo + deep lime) */
+  --gesso-canvas: #f4f2f6;
+  --gesso-surface: #e7e5e7;
+  --gesso-surface-elevated: #dedcde;
+  --gesso-surface-recessed: #eae8ec;
+  --gesso-divider: rgba(0,0,0,0.04);
+  --gesso-fg: #1a1a1a;
+  --gesso-fg-muted: #5b595f;
+  --gesso-primary: #2e3700;
+  --gesso-on-accent: #FFFFFF;
+  --gesso-accent-text: #2e3700;
+  --gesso-secondary: #2e3700;
+  --gesso-success: #138b3f;
+  --gesso-warning: #b86505;
+  --gesso-error: #DC2626;
+
+  /* Neutral ramp */
+  --gesso-neutral-50: #f4f2f6;
+  --gesso-neutral-100: #e7e5e7;
+  --gesso-neutral-200: #cac7ca;
+  --gesso-neutral-300: #adaaae;
+  --gesso-neutral-400: #918e93;
+  --gesso-neutral-500: #757378;
+  --gesso-neutral-600: #5b595f;
+  --gesso-neutral-700: #464244;
+  --gesso-neutral-800: #302e2d;
+  --gesso-neutral-900: #1a1a1a;
+  --gesso-neutral-950: #171717;
+
+  /* Data series */
+  --gesso-data-1: #505b28;
+  --gesso-data-2: #67723f;
+  --gesso-data-3: #7e8a56;
+  --gesso-data-4: #96a26d;
+  --gesso-data-5: #aebc85;
+  --gesso-data-6: #c8d59e;
+
+  /* Typography */
+  --gesso-font-display: 'Libre Franklin', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --gesso-font-body: 'Schibsted Grotesk', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --gesso-font-mono: 'Schibsted Grotesk', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Type scale */
+  --gesso-text-4xl: 36px;
+  --gesso-text-3xl: 30px;
+  --gesso-text-2xl: 24px;
+  --gesso-text-base: 16px;
+  --gesso-text-xs: 12px;
+
+  /* Spacing */
+  --gesso-space-1: 4px;
+  --gesso-space-2: 8px;
+  --gesso-space-3: 12px;
+  --gesso-space-4: 16px;
+  --gesso-space-6: 24px;
+  --gesso-space-8: 32px;
+  --gesso-space-12: 48px;
+  --gesso-space-16: 64px;
+
+  /* Layout */
+  --container-max-width: 1280px;
+  --outer-margin: 64px;
+
+  /* Border Radius */
+  --gesso-radius-sm: 4px;
+  --gesso-radius-md: 8px;
+  --gesso-radius-lg: 12px;
+  --gesso-radius-full: 9999px;
+
+  /* Shadows */
+  --gesso-shadow-sm: none;
+  --gesso-shadow-md: none;
+  --gesso-shadow-lg: 0 1px 2px rgba(0,0,0,0.04);
+
+  /* Motion */
+  --gesso-duration-fast: 160ms;
+  --gesso-easing-default: cubic-bezier(.4,0,.2,1);
+}
