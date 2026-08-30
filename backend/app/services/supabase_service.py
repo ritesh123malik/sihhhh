@@ -16,7 +16,14 @@ class SupabaseService:
     def __init__(self) -> None:
         settings = get_settings()
         self.url: Optional[str] = settings.supabase_url or os.getenv("SUPABASE_URL")
-        self.key: Optional[str] = settings.supabase_service_role_key or settings.supabase_anon_key or os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv("SUPABASE_ANON_KEY")
+        self.key: Optional[str] = (
+            settings.supabase_key
+            or settings.supabase_service_role_key
+            or settings.supabase_anon_key
+            or os.getenv("SUPABASE_KEY")
+            or os.getenv("SUPABASE_SERVICE_ROLE_KEY")
+            or os.getenv("SUPABASE_ANON_KEY")
+        )
         self.client: Optional[Any] = None
 
         if HAS_SUPABASE_SDK and self.url and self.key:

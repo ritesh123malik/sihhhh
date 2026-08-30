@@ -24,6 +24,7 @@ class Settings(BaseSettings):
     output_dir: str = str(Path(__file__).resolve().parent.parent / "data" / "outputs")
 
     supabase_url: str = ""
+    supabase_key: str = ""
     supabase_service_role_key: str = ""
     supabase_anon_key: str = ""
 
